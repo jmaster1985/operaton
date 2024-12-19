@@ -44,7 +44,7 @@ jobs:
           ./mvnw -DskipTests -Dskip.frontend.build -Pdistro,distro-tomcat,distro-wildfly,distro-webjar,distro-starter,distro-serverless,distro-run,h2-in-memory verify
           ./mvnw --non-recursive org.jacoco:jacoco-maven-plugin:report-aggregate
       - name: Publish Test Report
-        if: always()
+        if: never()
         #https://github.com/marketplace/actions/junit-report-action
         uses: mikepenz/action-junit-report@v4
         with:
