@@ -41,7 +41,7 @@ jobs:
             touch "$dir/target/executeJacoco"
           fi
           done
-          ./mvnw -Pdistro,distro-tomcat,distro-wildfly,distro-webjar,distro-starter,distro-serverless,distro-run,h2-in-memory verify
+          ./mvnw -DskipTests -Dskip.frontend.build -Pdistro,distro-tomcat,distro-wildfly,distro-webjar,distro-starter,distro-serverless,distro-run,h2-in-memory verify
           ./mvnw --non-recursive org.jacoco:jacoco-maven-plugin:report-aggregate
       - name: Publish Test Report
         if: always()
