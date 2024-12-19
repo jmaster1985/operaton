@@ -59,6 +59,7 @@ jobs:
           key: ${{ github.run_id }}-build-artifacts
 
   report:
+    if: false
     name: Generate Reports
     runs-on: ubuntu-24.04
     steps:
